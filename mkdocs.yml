@@ -1,0 +1,10 @@
+site_name: Space MVC Framework
+theme:
+  name: 'material'
+nav:
+  - What is Space MVC?:
+    - Introduction : index.md
+  - Video Tutorials:
+    - 1) What is Wamp?: what-is-wamp.md
+    - 2) What is PHP Storm IDE? : what-is-php-storm.md
+    - 3) What is Git? : what-is-git.md
