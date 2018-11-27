@@ -8,3 +8,33 @@ nav:
     - 1) What is Wamp?: what-is-wamp.md
     - 2) What is PHP Storm IDE? : what-is-php-storm.md
     - 3) What is Git? : what-is-git.md
+    - 4) How to use git in a Dev Team? : github-multiple-users.md
+    - 5) How to download space mvc using source tree? : download-space-mvc.md
+  - Getting Started:
+    - Space MVC Installation: installation.md
+    - Space CLI Tool: space-cli.md
+    - Environments: environments.md
+    - Configuration: configuration.md
+    - Directory Structure: directory-structure.md
+  - The Basics:
+    - Routing: routing.md
+    - Controllers: controllers.md
+    - Requests: requests.md
+    - Responses: responses.md
+    - Views: views.md
+    - Session: session.md
+    - Validation: validation.md
+    - Error Handling: error-handling.md
+    - Logging: logging.md
+  - Database:
+    - Getting Started: database-getting-started.md
+    - Configuration: database-configuration.md
+    - Conventions: database-conventions.md
+    - Basic Crud: database-basic-crud.md
+    - Finders: database-finders.md
+    - Relationships: database-relationships.md
+  - Advanced:
+    - File Storage: file-storage.md
+    - Cache: cache.md
+    - Events: events.md
+    - Mail: mail.md

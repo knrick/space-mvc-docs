@@ -1,0 +1,167 @@
+# Directory Structure
+* <a href="#introduction">Introduction</a>
+* <a href="#the-root-directory">The Root Directory</a>
+    * <a href="#the-root-app-directory">The app Directory</a>
+    * <a href="#the-config-directory">The config Directory</a>
+    * <a href="#the-database-directory">The database Directory</a>
+    * <a href="#the-public-directory">The public Directory</a>
+    * <a href="#the-resources-directory">The resources Directory</a>
+                
+    * <a href="#the-routes-directory">The routes Directory</a>
+    * <a href="#the-storage-directory">The storage Directory</a>
+    * <a href="#the-tests-directory">The tests Directory</a>
+    * <a href="#the-vendor-directory">The vendor Directory</a>
+    * <a href="#the-listeners-directory">The Models Directory</a>
+    * <a href="#the-listeners-directory">The Requests Directory</a>
+    * <a href="#the-events-directory">The Events Directory</a>
+    * <a href="#the-listeners-directory">The Listeners Directory</a>
+
+
+<a name="introduction"></a>
+
+## <a href="#introduction">Introduction</a>
+
+The default Space MVC application structure is intended to provide a great starting point for both large and small
+        applications. Of course, you are free to organize your application however you like. Space MVC imposes almost no
+        restrictions on where any given class is located - as long as Composer can autoload the class.
+
+#### Where Is The Models Directory?
+
+When getting started with Space MVC, many developers are confused by the lack of a >models
+        directory. However, the lack of such a directory is intentional. We find the word "models" ambiguous since it
+        means many different things to many different people. Some developers refer to an application's "model" as the
+        totality of all of its business logic, while others refer to "models" as classes that interact with a relational
+        database.
+    
+
+<a name="the-root-app-directory"></a>
+
+#### The App Directory
+
+The directory, as you might expect, contains the core code of your
+        application. We'll explore this directory in more detail soon; however, almost all of the classes in your
+        application will be in this directory.
+    
+
+<a name="the-config-directory"></a>
+
+#### The Config Directory
+
+The directory, as the name implies, contains all of your application's
+        configuration files. It's a great idea to read through all of these files and familiarize yourself with all of
+        the options available to you.
+    
+<a name="the-database-directory"></a>
+
+#### The Database Directory
+
+The directory contains your database migrations, model factories, and
+        seeds. If you wish, you may also use this directory to hold an SQLite database.
+    
+
+<a name="the-public-directory"></a>
+
+#### The Public Directory
+
+The public directory contains the index.php file, which is the entry
+        point for all requests entering your application and configures autoloading. This directory also houses your
+        assets such as images, JavaScript, and CSS.
+    
+
+<a name="the-resources-directory"></a>
+
+#### The Resources Directory
+
+The resources directory contains your views as well as your raw, un-compiled
+        assets such as LESS, SASS, or JavaScript. This directory also houses all of your language files.
+    
+<a name="the-routes-directory"></a>
+
+#### The Routes Directory
+
+The routes directory contains all of the route definitions for your
+        application. By default, several route files are included with Space MVC:
+        web.php,
+        api.php,
+        console.php and
+        channels.php.
+
+The web.php file contains routes that
+        the RouteServiceProvider places in the web
+        middleware group, which provides session state, CSRF protection, and cookie encryption. If your application does
+        not offer a stateless, RESTful API, all of your routes will most likely be defined in the
+        web.php file.
+    
+
+The api.php file contains routes that
+        the RouteServiceProvider places in the api
+        middleware group, which provides rate limiting. These routes are intended to be stateless, so requests entering
+        the application through these routes are intended to be authenticated via tokens and will not have access to
+        session state.
+    
+
+The console.php file is where you may
+        define all of your Closure based console commands. Each Closure is bound to a command instance allowing a simple
+        approach to interacting with each command's IO methods. Even though this file does not define HTTP routes, it
+        defines console based entry points (routes) into your application.
+    
+
+The channels.php file is where you may
+        register all of the event broadcasting channels that your application supports.
+    
+
+<a name="the-storage-directory"></a>
+
+#### The Storage Directory
+
+The storage directory contains your compiled Blade templates, file based
+        sessions, file caches, and other files generated by the framework. This directory is segregated into
+        app, framework, and logs directories. The app directory may
+        be used to store any files generated by your application. The framework
+        directory is used to store framework generated files and caches. Finally, the
+        logs directory contains your application's log files.
+    
+
+The storage/app/public directory may be used to store user-generated files, such as profile avatars, that should be publicly accessible. You should
+        create a symbolic link at public/storage which points to this directory. You may create the
+        link using the php artisan storage:link command.
+    
+
+<a name="the-tests-directory"></a>
+
+#### The Tests Directory
+
+The tests directory contains your automated tests. An
+        example <a href="https://phpunit.de/">PHPUnit</a> is provided out of the box. Each test class should be suffixed
+        with the word Test. You may run your tests using the
+        phpunit or php vendor/bin/phpunit commands.
+    
+
+<a name="the-vendor-directory"></a>
+
+#### The Vendor Directory
+
+The vendor directory contains your <a href="https://getcomposer.org">Composer</a> dependencies.
+
+<a name="the-broadcasting-directory"></a>
+
+#### The Events Directory
+
+This directory does not exist by default, but will be created for you by the
+       event:generate and
+        make:event Artisan commands. The
+        Events directory, as you might expect, houses event
+            classes. Events may be used to alert other parts of your application that a given action has occurred,
+        providing a great deal of flexibility and decoupling.
+    
+
+#### The Listeners Directory
+
+This directory does not exist by default, but will be created for you if you execute the
+        event:generate or make:listener
+        Artisan commands. The Listeners directory contains the classes that handle your events. Event listeners
+        receive an event instance and perform logic in response to the event being fired. For example, a
+        UserRegistered event might be handled by a SendWelcomeEmail listener.
+    
+
+<a name="the-mail-directory"></a>
