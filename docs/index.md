@@ -1,6 +1,8 @@
 # What is Space MVC Framework
 The Space MVC PHP Framework is the fastest and most lightweight high performance, scalable, advanced PHP 7+ MVC framework available.
 
+> Blockquotes are very handy in email to emulate reply text.
+
 ## How PHP works on servers
 When a client (browser) sends a request for a PHP page to the server, the server reads the requested file from the disk (storage) and sends this file to the interpreter. The interpreter then runs the PHP code, fetches the DB data (if required) and puts it into HTML tags. Once the interpreter completes its tasks, it sends the result back to the server, which sends this data to the client (browser) that made a request for this page.
 
