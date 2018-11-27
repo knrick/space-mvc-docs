@@ -3,7 +3,6 @@
  * http://php.net/manual/es/features.http-auth.php
  */
 
-
 $noAuthMessage = '<div style="font-size:12px;font-family:arial;">You have not been authorized</div>';
 
 $dominio = 'Authorization required';
@@ -16,10 +15,10 @@ if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
 }
 
 
-// Analizar la variable PHP_AUTH_DIGEST
-if (!($datos = analizar_http_digest($_SERVER['PHP_AUTH_DIGEST'])) ||
-    !isset($users[$datos['username']]))
-    die('Incorrect credentials');
+//// Analizar la variable PHP_AUTH_DIGEST
+//if (!($datos = analizar_http_digest($_SERVER['PHP_AUTH_DIGEST'])) ||
+//    !isset($users[$datos['username']]))
+//    die('Incorrect credentials');
 
 
 // Generate a valid reply
