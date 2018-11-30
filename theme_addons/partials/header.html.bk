@@ -1,7 +1,6 @@
-<header class="md-header" data-md-component="header" style="background-color:#4196EC;">
-  <nav class="md-header-nav md-grid" style="width:1920px !important; height:50px !important;">
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
     <div style="width:100%;">
-
       <div style="width:50px;height:48px;float:left;">
         <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" title="{{ config.site_name }}" class="md-header-nav__button md-logo">
           {% if config.theme.logo.icon %}
@@ -12,9 +11,7 @@
         </a>
       </div>
       <div style="width:50px;height:48px;float:left;color:red;">
-        &nbsp; <div class="md-flex__cell md-flex__cell--shrink">
-            <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer" style="color: white;position:relative;top:-10px;"></label>
-          </div>
+        &nbsp;
       </div>
       <div style="width:240px;height:48px;float:left;">
         <div class="md-header-nav__title" data-md-component="title">
@@ -33,7 +30,7 @@
         </div>
       </div>
 
-      <div style="width:550px;height:48px;float:right;">
+      <div style="width:260px;height:48px;float:right;text-align:right;">
         <div class="md-flex__cell md-flex__cell--shrink">
           {% block search_box %}
           {% if "search" in config["plugins"] %}
@@ -52,7 +49,7 @@
       </div>
 
 
-      <div style="width:400px;height:48px;float:right;text-align:right;">
+      <div style="width:600px;height:48px;float:right;text-align:right;background-color:#3F54AF;">
         <style type="text/css">
           .x-button {
             color:white;
@@ -69,7 +66,7 @@
         </style>
 
         <a href="/">
-          <button class="x-button" type="button">Home</button>
+          <button class="x-button" type="button">Documentation</button>
         </a>
 
         <a href="/what-is-wamp/">
@@ -77,20 +74,18 @@
         </a>
 
         <!--<a href="/docs/extras/mailing-list">-->
-        <!--<button class="x-button" type="button">Mailing List</button>-->
+          <!--<button class="x-button" type="button">Mailing List</button>-->
         <!--</a>-->
 
         <!--<a href="/docs/extras/code-contributors">-->
-        <!--<button class="x-button" type="button">Code Contributors</button>-->
+          <!--<button class="x-button" type="button">Code Contributors</button>-->
         <!--</a>-->
 
-        <a href="https://github.com/space-mvc/space-mvc/archive/master.zip">
+        <a target="_blank" href="https://github.com/space-mvc/space-mvc">
           <button class="x-button" type="button">Download</button>
         </a>
+      </div>
 
-        <a target="_blank" href="https://github.com/space-mvc/space-mvc">
-          <button class="x-button" type="button">Github</button>
-        </a>
 
       <div style="clear:both;"></div>
     </div>

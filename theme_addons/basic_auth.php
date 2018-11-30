@@ -1,51 +1,23 @@
 <?php
-/*
- * http://php.net/manual/es/features.http-auth.php
- */
 
-$noAuthMessage = '<div style="font-size:12px;font-family:arial;">You have not been authorized</div>';
+$loginSuccessful = false;
 
-$dominio = 'Authorization required';
+if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])){
 
-if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
-    header('HTTP/1.1 401 Unauthorized');
-    header('WWW-Authenticate: Digest realm="'.$dominio.
-           '",qop="auth",nonce="'.uniqid().'",opaque="'.md5($dominio).'"');
-    die($noAuthMessage);
+	$username = $_SERVER['PHP_AUTH_USER'];
+	$password = $_SERVER['PHP_AUTH_PW'];
+
+	if ($username == $credentials['username'] && $password == $credentials['password']){
+		$loginSuccessful = true;
+	}
 }
 
+if (!$loginSuccessful) {
+	header('WWW-Authenticate: Basic realm="default"');
+	header('HTTP/1.0 401 Unauthorized');
 
-//// Analizar la variable PHP_AUTH_DIGEST
-//if (!($datos = analizar_http_digest($_SERVER['PHP_AUTH_DIGEST'])) ||
-//    !isset($users[$datos['username']]))
-//    die('Incorrect credentials');
-
-
-// Generate a valid reply
-$A1 = md5($datos['username'] . ':' . $dominio . ':' . $users[$datos['username']]);
-$A2 = md5($_SERVER['REQUEST_METHOD'].':'.$datos['uri']);
-$valid_reply = md5($A1.':'.$datos['nonce'].':'.$datos['nc'].':'.$datos['cnonce'].':'.$datos['qop'].':'.$A2);
-
-if ($datos['response'] != $valid_reply)
-{
-    //die('Credenciales incorrectas');
-    header('HTTP/1.1 401 Unauthorized');
-    header('WWW-Authenticate: Digest realm="'.$dominio.
-           '",qop="auth",nonce="'.uniqid().'",opaque="'.md5($dominio).'"');
-		die($noAuthMessage);
+	echo '<div style="font-family:arial;font-size:14px;">401 - Unauthorized.</div>';
+	exit;
 }
-function analizar_http_digest($txt)
-{
-    // Avod missing data
-    $partes_necesarias = array('nonce'=>1, 'nc'=>1, 'cnonce'=>1, 'qop'=>1, 'username'=>1, 'uri'=>1, 'response'=>1);
-    $datos = array();
-    $claves = implode('|', array_keys($partes_necesarias));
 
-    preg_match_all('@(' . $claves . ')=(?:([\'"])([^\2]+?)\2|([^\s,]+))@', $txt, $coincidencias, PREG_SET_ORDER);
-
-    foreach ($coincidencias as $c) {
-        $datos[$c[1]] = $c[3] ? $c[3] : $c[4];
-        unset($partes_necesarias[$c[1]]);
-    }
-    return $partes_necesarias ? false : $datos;
-}
+?>

@@ -2,20 +2,20 @@ site_name: Space MVC Framework
 theme:
   name: material
   custom_dir: 'theme_addons/'
-
+repo_name: 'space-mvc/space-mvc'
+repo_url: 'https://github.com/space-mvc/space-mvc'
 extra:
   username: "admin"
   password: "secret"
-
 nav:
   - What is Space MVC?:
     - Introduction : index.md
   - Video Tutorials:
-    - 1) What is Wamp?: what-is-wamp.md
-    - 2) What is PHP Storm IDE? : what-is-php-storm.md
-    - 3) What is Git? : what-is-git.md
-    - 4) How to use git in a Dev Team? : github-multiple-users.md
-    - 5) How to download space mvc using source tree? : download-space-mvc.md
+    - What is Wamp?: what-is-wamp.md
+    - What is PHP Storm IDE? : what-is-php-storm.md
+    - What is Git? : what-is-git.md
+    - How to use git in a Dev Team? : github-multiple-users.md
+    - How to download space mvc using source tree? : download-space-mvc.md
   - Getting Started:
     - Space MVC Installation: installation.md
     - Space CLI Tool: space-cli.md

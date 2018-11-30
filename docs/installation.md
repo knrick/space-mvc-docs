@@ -1,4 +1,4 @@
-### Server Requirements
+## Server Requirements
 
 The Space MVC framework has a few system requirements:
 
@@ -7,7 +7,7 @@ The Space MVC framework has a few system requirements:
 * PHP Memcached
 * Mysql Database
 
-### Installing Framework
+## Installing Framework
 
 You can install Space CRM quite easily using github and composer.
 
@@ -20,7 +20,7 @@ composer install
 
 ## Web Server Configuration
 
-#### Apache
+## Apache
 Space MVC includes a public/.htaccess file that is used to provide URLs without the index.php front controller in the path. Before serving Space MVC with Apache, be sure to enable the mod_rewrite module so the .htaccess file will be honored by the server.
 
 If the .htaccess file that ships with Space MVC does not work with your Apache installation, try this alternative:
@@ -37,7 +37,7 @@ Options +FollowSymLinks -Indexes
     RewriteRule ^ index.php [L]
 ```
 
-#### Nginx
+## Nginx
 If you are using Nginx, the following directive in your site configuration will direct all requests to the index.php front controller:
 
 ```php
