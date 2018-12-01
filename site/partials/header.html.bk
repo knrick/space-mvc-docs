@@ -1,0 +1,93 @@
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div style="width:100%;">
+      <div style="width:50px;height:48px;float:left;">
+        <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" title="{{ config.site_name }}" class="md-header-nav__button md-logo">
+          {% if config.theme.logo.icon %}
+          <i class="md-icon">{{ config.theme.logo.icon }}</i>
+          {% else %}
+          <img src="{{ config.theme.logo | url }}" width="24" height="24">
+          {% endif %}
+        </a>
+      </div>
+      <div style="width:50px;height:48px;float:left;color:red;">
+        &nbsp;
+      </div>
+      <div style="width:240px;height:48px;float:left;">
+        <div class="md-header-nav__title" data-md-component="title">
+          {% block site_name %}
+          {% if config.site_name == page.title %}
+          {{ config.site_name }}
+          {% else %}
+          <span class="md-header-nav__topic">
+                {{ config.site_name }}
+              </span>
+          <span class="md-header-nav__topic">
+                {{ page.title }}
+              </span>
+          {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+
+      <div style="width:260px;height:48px;float:right;text-align:right;">
+        <div class="md-flex__cell md-flex__cell--shrink">
+          {% block search_box %}
+          {% if "search" in config["plugins"] %}
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          {% include "partials/search.html" %}
+          {% endif %}
+          {% endblock %}
+        </div>
+        {% if config.repo_url %}
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            {% include "partials/source.html" %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+
+      <div style="width:600px;height:48px;float:right;text-align:right;background-color:#3F54AF;">
+        <style type="text/css">
+          .x-button {
+            color:white;
+            font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size:14px;
+            margin-top:9px;
+            margin-right:10px;
+            padding:8px;
+            border-radius: 5px;
+          }
+          .x-button:hover {
+            background-color:#5C96D4;
+          }
+        </style>
+
+        <a href="/">
+          <button class="x-button" type="button">Documentation</button>
+        </a>
+
+        <a href="/what-is-wamp/">
+          <button class="x-button" type="button">Tutorial Videos</button>
+        </a>
+
+        <!--<a href="/docs/extras/mailing-list">-->
+          <!--<button class="x-button" type="button">Mailing List</button>-->
+        <!--</a>-->
+
+        <!--<a href="/docs/extras/code-contributors">-->
+          <!--<button class="x-button" type="button">Code Contributors</button>-->
+        <!--</a>-->
+
+        <a target="_blank" href="https://github.com/space-mvc/space-mvc">
+          <button class="x-button" type="button">Download</button>
+        </a>
+      </div>
+
+
+      <div style="clear:both;"></div>
+    </div>
+  </nav>
+</header>
