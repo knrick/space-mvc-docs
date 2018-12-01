@@ -5,7 +5,7 @@ $credentials = array(
 	'password' => 'secret'
 );
 
-require_once('./basic_auth.php');
+//require_once('./basic_auth.php');
 ?>
 
 
