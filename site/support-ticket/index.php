@@ -877,7 +877,7 @@ $credentials = array(
 
       
         
-<footer class="md-footer">
+<footer class="md-footer" style="position:fixed;bottom:0;left:0;width:100%;">
   
 
   <!--

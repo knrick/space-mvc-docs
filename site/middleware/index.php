@@ -1172,7 +1172,7 @@ When calling the terminate method on your middleware, Space MVC will resolve a f
 
       
         
-<footer class="md-footer">
+<footer class="md-footer" style="position:fixed;bottom:0;left:0;width:100%;">
   
 
   <!--

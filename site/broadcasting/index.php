@@ -1806,7 +1806,7 @@ Once you have configured a notification to use the broadcast channel, you may li
 
       
         
-<footer class="md-footer">
+<footer class="md-footer" style="position:fixed;bottom:0;left:0;width:100%;">
   
 
   <!--

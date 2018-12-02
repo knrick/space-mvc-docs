@@ -1036,7 +1036,7 @@ This cookie is primarily sent as a convenience since some JavaScript frameworks 
 
       
         
-<footer class="md-footer">
+<footer class="md-footer" style="position:fixed;bottom:0;left:0;width:100%;">
   
 
   <!--

@@ -1222,7 +1222,7 @@ All view composers are resolved via the <a href="/docs/5.7/container">service co
 
       
         
-<footer class="md-footer">
+<footer class="md-footer" style="position:fixed;bottom:0;left:0;width:100%;">
   
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
