@@ -222,13 +222,13 @@ $credentials = array(
           }
         </style>
 
-        <a href="/">
-          <button class="x-button" type="button">Home</button>
-        </a>
+        <!--<a href="/">-->
+          <!--<button class="x-button" type="button">Home</button>-->
+        <!--</a>-->
 
-        <a href="/what-is-wamp/">
-          <button class="x-button" type="button">Tutorial Videos</button>
-        </a>
+        <!--<a href="/what-is-wamp/">-->
+          <!--<button class="x-button" type="button">Tutorial Videos</button>-->
+        <!--</a>-->
 
         <!--<a href="/docs/extras/mailing-list">-->
         <!--<button class="x-button" type="button">Mailing List</button>-->
